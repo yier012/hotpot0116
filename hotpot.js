@@ -1,8 +1,8 @@
 // --- 這裡填入你事先蒐集好的資料 ---
 const ingredientsData = [
-    { id: 1, name: "小王", msg: "祝芝劭永遠跟肉片一樣鮮嫩多汁！", img: "meat.png" },
-    { id: 2, name: "小美", msg: "生日快樂！你是我們這鍋火鍋的靈魂！", img: "ball.png" },
-    { id: 3, name: "阿強", msg: "天天開心，工作順利，發大財！", img: "corn.png" },
+    { id: 1, name: "小王", msg: "祝芝劭永遠跟肉片一樣鮮嫩多汁！", img: "shrimp.png" },
+    { id: 2, name: "小美", msg: "生日快樂！你是我們這鍋火鍋的靈魂！", img: "shrimp.png" },
+    { id: 3, name: "阿強", msg: "天天開心，工作順利，發大財！", img: "shrimp.png" },
     // 你可以繼續往下加
 ];
 
