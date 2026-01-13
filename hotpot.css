@@ -31,7 +31,6 @@ body {
     transition: 0.3s; animation: float 3s infinite ease-in-out;
     filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
 }
-.ing-item.opened { opacity: 0.5; filter: grayscale(0.8); } /* 點過的變灰掉 */
 
 @keyframes float { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(5px, 10px) rotate(5deg); } }
 
