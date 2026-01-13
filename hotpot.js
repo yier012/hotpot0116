@@ -3,6 +3,7 @@ const ingredientsData = [
     { id: 1, name: "小王", msg: "祝芝劭永遠跟肉片一樣鮮嫩多汁！", img: "shrimp.png" },
     { id: 2, name: "小美", msg: "生日快樂！你是我們這鍋火鍋的靈魂！", img: "shrimp.png" },
     { id: 3, name: "阿強", msg: "天天開心，工作順利，發大財！", img: "shrimp.png" },
+    { id: 4, name: "阿強", msg: "媽的貢丸", img: "ball.webp" },
     // 你可以繼續往下加
 ];
 
@@ -98,4 +99,31 @@ function startApp() {
 
     // 初始化火鍋
     initPot();
+}
+
+function changeSoup(type) {
+    const soup = document.querySelector('.soup');
+    let newBg = "";
+
+    switch(type) {
+        case 'spicy':
+            newBg = "radial-gradient(circle, #ff9e91 0%, #ff5e62 100%)";
+            break;
+        case 'milk':
+            newBg = "radial-gradient(circle, #ffffff 0%, #faf0de 100%)";
+            break;
+        case 'orange':
+            newBg = "radial-gradient(circle, #ffcc80 0%, #eb9f3d 100%)";
+            break;
+    }
+
+    // 變更背景
+    soup.style.background = newBg;
+    
+    // 順便播一下點擊音效
+    const popSound = document.getElementById('audio-soup');
+    if (popSound) {
+        popSound.currentTime = 0;
+        popSound.play();
+    }
 }

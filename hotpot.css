@@ -103,3 +103,40 @@ body {
     background: white; color: var(--accent); margin-top: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
+/* 專門針對彈窗內的「繼續吃」按鈕增加上方間距 */
+#msg-modal .btn-primary {
+    margin-top: 25px; /* 你可以根據感覺調整這個數字，數字越大離越遠 */
+}
+
+/* 如果你覺得署名作者的字也跟祝福語太近，也可以順便加這個 */
+#item-author {
+    display: block;   /* 確保它是獨立的一行 */
+    margin-top: 15px; /* 增加與祝福語之間的距離 */
+    color: #888;      /* 讓署名稍微淡一點點，比較有質感 */
+}
+
+/* 湯底選擇器容器 */
+.soup-selector {
+    margin-bottom: 10px;
+}
+.soup-selector p {
+    font-size: 0.8rem; color: #888; margin-bottom: 8px;
+}
+.soup-btns {
+    display: flex; justify-content: center; gap: 10px;
+}
+
+/* 按鈕基本樣式 */
+.s-btn {
+    border: 2px solid #ddd; padding: 5px 12px; border-radius: 15px;
+    font-size: 0.85rem; cursor: pointer; transition: 0.3s; background: white;
+}
+
+/* 各別口味顏色 */
+.s-btn.spicy { border-color: #ff5e62; color: #ff5e62; }
+.s-btn.milk { border-color: #faf0de; color: #d4c0a1; }
+.s-btn.orange { border-color: #eb9f3d; color: #eb9f3d; }
+
+/* 點擊後的縮放效果 */
+.s-btn:active { transform: scale(0.9); }

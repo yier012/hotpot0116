@@ -10,24 +10,32 @@
 <body>
     <audio id="audio-intro" src="openning.mp3"></audio>
     <audio id="audio-pop" src="sound-effect.mp3"></audio>
+    <audio id="audio-soup" src=""></audio>
+
     <div id="start-overlay" class="start-screen">
-        <div id="start-overlay" class="start-screen">
-            <div class="start-box">
-                <div class="heart-icon">🍲</div> <h1>陳芝劭生日火鍋店</h1>
-                <p>這是一鍋專屬於你的暖心火鍋</p>
-                <button class="btn-primary" onclick="startApp()">開鍋享用</button>
-            </div>
+        <div class="start-box">
+            <div class="heart-icon">🍲</div> <h1>芝劭生日火鍋店</h1>
+            <p>這是一鍋專屬於你的暖心火鍋</p>
+            <button class="btn-primary" onclick="startApp()">開鍋享用</button>
         </div>
     </div>
+
     <div class="main-layout">
         <header>
-            <h1 class="title">🍲 陳芝劭的生日大火鍋</h1>
+            <h1 class="title">🍲 芝劭的生日大火鍋 🍲</h1>
             <div class="progress-container">
                 <span id="collect-count">已品嚐：0 / 0</span>
                 <div class="progress-bar"><div id="progress-fill"></div></div>
             </div>
         </header>
-
+        <div class="soup-selector">
+            <p>選擇湯底：</p>
+            <div class="soup-btns">
+                <button class="s-btn spicy" onclick="changeSoup('spicy')">麻辣</button>
+                <button class="s-btn milk" onclick="changeSoup('milk')">牛奶</button>
+                <button class="s-btn orange" onclick="changeSoup('orange')">橙汁</button>
+            </div>
+        </div>
         <div class="hotpot-wrap">
             <div class="steam-wrap">
                 <span></span><span></span><span></span>
@@ -54,7 +62,7 @@
 
     <div id="final-modal" class="modal">
         <div class="modal-content final-card">
-            <h1>🎂 生日快樂！</h1>
+            <h1>🎂 生日快樂 🎂</h1>
             <div class="final-photo">
                 <img src="final-photo.jpg" alt="Happy Birthday">
             </div>
