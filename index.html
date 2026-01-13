@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>陳芝劭生日大火鍋</title>
+    <link rel="stylesheet" href="hotpot.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <audio id="audio-intro" src="openning.mp3"></audio>
+    <audio id="audio-pop" src="sound-effect.mp3"></audio>
+    <div id="start-overlay" class="start-screen">
+        <div id="start-overlay" class="start-screen">
+            <div class="start-box">
+                <div class="heart-icon">🍲</div> <h1>陳芝劭生日火鍋店</h1>
+                <p>這是一鍋專屬於你的暖心火鍋</p>
+                <button class="btn-primary" onclick="startApp()">開鍋享用</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-layout">
+        <header>
+            <h1 class="title">🍲 陳芝劭的生日大火鍋</h1>
+            <div class="progress-container">
+                <span id="collect-count">已品嚐：0 / 0</span>
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+            </div>
+        </header>
+
+        <div class="hotpot-wrap">
+            <div class="steam-wrap">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="pot">
+                <div class="soup">
+                    <div id="ingredients-container"></div>
+                    <div class="bubbles"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <button id="open-list-btn" class="btn-secondary">查看已開啟的祝福</button>
+        </div>
+    </div>
+
+    <div id="msg-modal" class="modal">
+        <div class="modal-content">
+            <div id="msg-body">
+                <img id="item-img" src="" alt="">
+                <p id="item-text"></p>
+                <small id="item-author"></small>
+            </div>
+            <button class="btn-primary" onclick="closeModal()">繼續吃</button>
+        </div>
+    </div>
+
+    <div id="list-modal" class="modal">
+        <div class="modal-content list-mode">
+            <h3>📖 已收到的祝福</h3>
+            <div id="collected-list"></div>
+            <button class="btn-secondary" onclick="closeModal()">關閉</button>
+        </div>
+    </div>
+
+    <div id="final-modal" class="modal">
+        <div class="modal-content final-card">
+            <h1>🎂 生日快樂！</h1>
+            <div class="final-photo">
+                <img src="final-photo.jpg" alt="Happy Birthday">
+            </div>
+            <p>所有的食材都品嚐完啦！<br>希望這鍋火鍋能溫暖陳芝劭的新的一年。</p>
+            <p class="final-wish">我們永遠愛你！❤️❤️❤️</p>
+            <button class="btn-primary" onclick="location.reload()">再吃一次</button>
+        </div>
+    </div>
+
+    <script src="hotpot.js"></script>
+</body>
+</html>
