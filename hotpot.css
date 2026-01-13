@@ -35,13 +35,31 @@ body {
 @keyframes float { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(5px, 10px) rotate(5deg); } }
 
 /* 彈窗樣式 */
+/* 找到 .modal 並改成這樣 */
 .modal {
-    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85); z-index: 100; backdrop-filter: blur(8px);
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); 
+    z-index: 100; 
+    backdrop-filter: blur(8px);
+    
+    /* ▼▼▼ 新增這兩行：允許垂直滾動 ▼▼▼ */
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; 
 }
+/* 找到 .modal-content 並改成這樣 */
 .modal-content {
-    background: white; width: 85%; max-width: 350px; margin: 10% auto;
-    padding: 30px; border-radius: 25px; text-align: center;
+    background: white; 
+    width: 85%; 
+    max-width: 350px; 
+    /* ▼▼▼ 修改這行：增加上下邊距，建議 40px 以上 ▼▼▼ */
+    margin: 40px auto; 
+    padding: 30px; 
+    border-radius: 25px; 
+    text-align: center;
+    position: relative;
 }
 #item-img { width: 150px; height: 150px; margin-bottom: 20px; }
 
@@ -57,7 +75,18 @@ body {
 
 /* 最終卡片 */
 .final-card h1 { color: var(--accent); }
-.final-photo img { width: 100%; border-radius: 15px; margin: 15px 0; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+/* 找到 .final-photo img 並改成這樣 */
+.final-photo img { 
+    width: 100%; 
+    /* ▼▼▼ 新增這兩行：限制圖片高度，並確保不變形 ▼▼▼ */
+    max-height: 200px; 
+    object-fit: cover; 
+    
+    border-radius: 15px; 
+    margin: 15px 0; 
+    border: 5px solid #fff; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
 .final-wish { font-size: 1.2rem; font-weight: bold; color: #ff5e62; }
 
 /* 開場遮罩樣式 */
