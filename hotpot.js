@@ -2,8 +2,12 @@
 const ingredientsData = [
     { id: 1, name: "小王", msg: "祝芝劭永遠跟肉片一樣鮮嫩多汁！", img: "shrimp.png" },
     { id: 2, name: "小美", msg: "生日快樂！你是我們這鍋火鍋的靈魂！", img: "shrimp.png" },
-    { id: 3, name: "阿強", msg: "天天開心，工作順利，發大財！", img: "shrimp.png" },
+    { id: 3, name: "小屌偉", msg: "兒子生日快樂嗚嗚嗚為什麼是母雞帶小雞，因為迪是團媽啦🔥（然後這張圖有亮點啊這爸）", img: "david.png"},
     { id: 4, name: "阿強", msg: "媽的貢丸", img: "ball.webp" },
+    { id: 5, name: "Jay Chou", msg: "祝兒子生日快樂，未來一切順利，畫小雞的人是小屌", img: "jay.png" },
+    { id: 6, name: "波波子", msg: "兒子生日快樂啊～小屌團的爸爸請小屌吃糰子", img: "bobo.png" },
+    { id: 7, name: "罡罡", msg: "嗚嗚嗚", img: "gang.png" },
+
     // 你可以繼續往下加
 ];
 
@@ -12,17 +16,19 @@ let openedIds = new Set(); // 記錄點過的 ID
 // 初始化火鍋
 function initPot() {
     const container = document.getElementById('ingredients-container');
-    // 防止重複執行
     container.innerHTML = "";
-    document.getElementById('collect-count').innerText = `已品嚐：0 / ${ingredientsData.length}`;
-
+    
     ingredientsData.forEach(data => {
         const img = document.createElement('img');
         img.src = data.img;
         img.className = 'ing-item';
         img.id = `ing-${data.id}`;
         
-        // 隨機初始位置
+        // --- 修改這裡：如果資料裡有寫 scale，就把它放大 ---
+        if (data.scale) {
+            img.style.width = (80 * data.scale) + "px"; // 比如 80 * 1.5 = 120px
+        }
+        
         img.style.left = Math.random() * 70 + 10 + "%";
         img.style.top = Math.random() * 70 + 10 + "%";
         

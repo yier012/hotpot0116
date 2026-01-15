@@ -26,10 +26,17 @@ body {
 @keyframes boil { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
 
 /* 食材飄浮 */
+/* 找到 .ing-item 並改成這樣 */
 .ing-item {
-    position: absolute; width: 60px; height: 60px; cursor: pointer;
-    transition: 0.3s; animation: float 3s infinite ease-in-out;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+    position: absolute; 
+    width: 80px;        /* 1. 把基礎大小從 60 提高到 80，看細節更清楚 */
+    height: auto;       /* 2. 重點：高度設為 auto，這樣長方形的圖就不會被壓扁 */
+    cursor: pointer;
+    transition: 0.3s; 
+    animation: float 3s infinite ease-in-out;
+    
+    /* 3. 增加陰影，讓細節多的圖在湯底裡更突出 */
+    filter: drop-shadow(3px 5px 8px rgba(0,0,0,0.3)); 
 }
 
 @keyframes float { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(5px, 10px) rotate(5deg); } }
@@ -61,7 +68,17 @@ body {
     text-align: center;
     position: relative;
 }
-#item-img { width: 150px; height: 150px; margin-bottom: 20px; }
+#item-img {
+    width: 200px;        /* 1. 把寬度稍微放大一點，讓朋友畫的細節更清楚 */
+    height: auto;        /* 2. 重點：高度設為 auto，圖片就不會被壓扁了 */
+    max-height: 250px;   /* 3. 限制最大高度，防止長條形的圖（如肉片）把視窗撐得太長 */
+    
+    /* 4. 保險起見，加入這行確保比例絕對不跑偏 */
+    object-fit: contain; 
+    
+    margin-bottom: 20px;
+    display: inline-block; /* 確保居中有效 */
+}
 
 .btn-primary {
     background: var(--accent); color: white; border: none; padding: 12px 30px;
